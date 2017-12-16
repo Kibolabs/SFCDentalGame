@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="bootstrap" Version="3.3.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+         <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DAL\">
+    </Folder>
+    <Folder Include="DAL\Entities\">
+    </Folder>
+    <Folder Include="DAL\Interfaces\">
+    </Folder>
+    <Folder Include="DAL\Repositories\">
+    </Folder>
+    <Folder Include="Views\Practice\">
+    </Folder>
+    <Folder Include="Components\">
+      <DependentUpon>Components</DependentUpon>
+    </Folder>
+    <Folder Include="Views\Shared\Components\">
+      <DependentUpon>Components</DependentUpon>
+    </Folder>
+    <Folder Include="Views\Shared\Components\CategoryMenu\">
+      <DependentUpon>CategoryMenu</DependentUpon>
+    </Folder>
+    <Folder Include="Views\Shared\Components\PracticeSummary\">
+      <DependentUpon>PracticeSummary</DependentUpon>
+    </Folder>
+  </ItemGroup>
+</Project>

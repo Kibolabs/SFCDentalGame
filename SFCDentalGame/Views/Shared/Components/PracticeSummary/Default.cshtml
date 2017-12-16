@@ -1,0 +1,17 @@
+﻿@model PracticeViewModel
+
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity.EntityFrameworkCore
+
+
+@if (Model.DentalPractice.PracticeItems.Count > 0)
+{
+    <li>
+        <a asp-controller="Practice">
+            <span class="glyphicon glyphicon-shopping-cart"></span>
+            <span id="practices-status">
+                @Model.DentalPractice.PracticeItems.Count
+            </span>
+        </a>
+    </li>
+}

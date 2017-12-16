@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFCDentalGame", "SFCDentalGame.csproj", "{99D718B8-7C74-48AD-9F6B-546CB9D2DADB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99D718B8-7C74-48AD-9F6B-546CB9D2DADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D718B8-7C74-48AD-9F6B-546CB9D2DADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D718B8-7C74-48AD-9F6B-546CB9D2DADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D718B8-7C74-48AD-9F6B-546CB9D2DADB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

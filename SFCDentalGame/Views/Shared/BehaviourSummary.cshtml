@@ -1,0 +1,20 @@
+﻿@model Behaviour
+<div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                <div class="caption">
+                        <h3 class="pull-right"> @Model.Points.ToString("c") </h3>
+                        <h3>
+                            <a>@Model.BehaviourName</a>
+                        </h3>
+   
+                        <p>@Model.BehaviourDescription</p>
+                    </div>
+        <div class="addToPractice text-right">
+            <p class="button ">
+                <a class="btn btn-success" id="practiceButton" asp-controller="Practice" asp-action="AddToDentalPractice" asp-route-behaviourId="@Model.BehaviourId">
+                    Add to cart
+                </a>
+            </p>
+        </div>
+                </div>
+            </div>

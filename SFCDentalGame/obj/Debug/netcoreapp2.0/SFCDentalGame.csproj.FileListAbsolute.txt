@@ -1,0 +1,11 @@
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/bin/Debug/netcoreapp2.0/SFCDentalGame.deps.json
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/bin/Debug/netcoreapp2.0/SFCDentalGame.runtimeconfig.json
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/bin/Debug/netcoreapp2.0/SFCDentalGame.runtimeconfig.dev.json
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/bin/Debug/netcoreapp2.0/SFCDentalGame.dll
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/bin/Debug/netcoreapp2.0/SFCDentalGame.pdb
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/obj/Debug/netcoreapp2.0/SFCDentalGame.csprojResolveAssemblyReference.cache
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/obj/Debug/netcoreapp2.0/SFCDentalGame.csproj.CoreCompileInputs.cache
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/obj/Debug/netcoreapp2.0/SFCDentalGame.AssemblyInfoInputs.cache
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/obj/Debug/netcoreapp2.0/SFCDentalGame.AssemblyInfo.cs
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/obj/Debug/netcoreapp2.0/SFCDentalGame.dll
+/Users/kibo/Projects/SFCDentalGame/SFCDentalGame/obj/Debug/netcoreapp2.0/SFCDentalGame.pdb
