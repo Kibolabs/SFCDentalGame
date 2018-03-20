@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
@@ -10,26 +11,14 @@ namespace SFCDentalGame.Models
     // You may need to install the Microsoft.AspNetCore.Http.Abstractions package into your project
     public class LoginViewModel
     {
-        private readonly RequestDelegate _next;
+        [Required]
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
 
-        public LoginViewModel(RequestDelegate next)
-        {
-            _next = next;
-        }
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; }
 
-        public Task Invoke(HttpContext httpContext)
-        {
-
-            return _next(httpContext);
-        }
-    }
-
-    // Extension method used to add the middleware to the HTTP request pipeline.
-    public static class LoginViewModelExtensions
-    {
-        public static IApplicationBuilder UseMiddlewareClassTemplate(this IApplicationBuilder builder)
-        {
-            return builder.UseMiddleware<LoginViewModel>();
-        }
+        public string ReturnUrl { get; set; }
     }
 }

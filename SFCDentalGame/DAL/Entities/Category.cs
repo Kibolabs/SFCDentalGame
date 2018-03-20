@@ -7,9 +7,7 @@ namespace SFCDentalGame.DAL.Entities
 {
     public class Category
     {
-        public Category()
-        {
-        }
+
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CategoryId
         {
@@ -31,5 +29,7 @@ namespace SFCDentalGame.DAL.Entities
         public List<Behaviour> Behaviours {
             get; set;
         }
+
+        //public List<Frequency> Frequencies { get; set; }
     }
 }

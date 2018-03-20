@@ -4,9 +4,6 @@ namespace SFCDentalGame.Models
 {
     public class DentalHealthDetail
     {
-        public DentalHealthDetail()
-        {
-        }
         public int DentalHealthDetailId
         {
             get;
@@ -28,7 +25,6 @@ namespace SFCDentalGame.Models
             set;
 
         }
-
         public string Comment
         {
             get;

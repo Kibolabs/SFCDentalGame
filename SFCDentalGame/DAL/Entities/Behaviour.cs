@@ -4,16 +4,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SFCDentalGame.DAL.Entities
 {
-    public enum Frequency
-    {
-        DAILY, TWICEADAY, ANNUALY, SEMIANNUALY, QUARTELY, OCASSIONALY
-    }
     public class Behaviour
+
     {
-        
-        public Behaviour()
-        {
-        }
+        public enum Rating { GOOD, BETTER, EXCELLENT }
+
         public int BehaviourId
         {
             get;
@@ -42,25 +37,17 @@ namespace SFCDentalGame.DAL.Entities
             get;
             set;
         }
-        public bool InPractice
+        public Rating ratings
         {
             get;
             set;
         }
-        public int value
-        {
-            get;
-            set;
-        }
+        public string ProffesionalComment { get; set; }
+        public string ImageUrl { get; set; }
         public int CategoryId { get; set; }
 
         public virtual Category Category { get; set; }
 
-        public Frequency? Frequency
-        {
-            get;
-            set;
-        }
 
     }
 }

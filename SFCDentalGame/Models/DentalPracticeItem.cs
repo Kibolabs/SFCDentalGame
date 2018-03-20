@@ -4,9 +4,6 @@ namespace SFCDentalGame.Models
 {
     public class DentalPracticeItem
     {
-        public DentalPracticeItem()
-        {
-        }
         public int DentalPracticeItemID
         {
             get;
@@ -19,6 +16,11 @@ namespace SFCDentalGame.Models
             set;
         }
         public string DentalPracticeId
+        {
+            get;
+            set;
+        }
+        public string FrequencyName
         {
             get;
             set;

@@ -1,0 +1,72 @@
+@model SFCDentalGame.DAL.Entities.RangeBehaviour
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RangeBehaviour</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Range)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Range)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BehaviourName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BehaviourName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BehaviourDescription)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BehaviourDescription)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BehaviourType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BehaviourType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Points)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Points)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ratings)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ratings)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProffesionalComment)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProffesionalComment)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageUrl)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BehaviourId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

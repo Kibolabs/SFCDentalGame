@@ -1,0 +1,78 @@
+@model SFCDentalGame.DAL.Entities.Behaviour
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create New Behaviour</h2>
+<hr />
+<div class="row myForms" >
+        <form asp-action="Create" class="form-horizontal" >
+            <span class="border border-secondary"></span>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BehaviourName" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="BehaviourName" class="form-control" />
+                <span asp-validation-for="BehaviourName" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviourDescription" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="BehaviourDescription" class="form-control" />
+                <span asp-validation-for="BehaviourDescription" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviourType" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="BehaviourType" class="form-control" />
+                <span asp-validation-for="BehaviourType" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Points" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="Points" class="form-control" />
+                <span asp-validation-for="Points" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox " align="right" >
+                    <label class="col-md-5">
+                        <input asp-for="IsGood" align="middle" /> @Html.DisplayNameFor(model => model.IsGood)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="value" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="value" class="form-control" />
+                <span asp-validation-for="value" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="FrequencyName" class="col-md-2 control-label"></label>
+            <div class="col-md-5">
+                <input asp-for="FrequencyName" class="form-control" />
+                <span asp-validation-for="FrequencyName" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" align="middle" />
+            </div>
+        </form>
+    </div>
+<div>
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

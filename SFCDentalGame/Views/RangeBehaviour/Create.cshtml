@@ -1,0 +1,72 @@
+@model SFCDentalGame.DAL.Entities.RangeBehaviour
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>RangeBehaviour</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Range" class="control-label"></label>
+                <select asp-for="Range" class="form-control"></select>
+                <span asp-validation-for="Range" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviourName" class="control-label"></label>
+                <input asp-for="BehaviourName" class="form-control" />
+                <span asp-validation-for="BehaviourName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviourDescription" class="control-label"></label>
+                <input asp-for="BehaviourDescription" class="form-control" />
+                <span asp-validation-for="BehaviourDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviourType" class="control-label"></label>
+                <input asp-for="BehaviourType" class="form-control" />
+                <span asp-validation-for="BehaviourType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Points" class="control-label"></label>
+                <input asp-for="Points" class="form-control" />
+                <span asp-validation-for="Points" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ratings" class="control-label"></label>
+                <select asp-for="ratings" class="form-control"></select>
+                <span asp-validation-for="ratings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProffesionalComment" class="control-label"></label>
+                <input asp-for="ProffesionalComment" class="form-control" />
+                <span asp-validation-for="ProffesionalComment" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="control-label"></label>
+                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

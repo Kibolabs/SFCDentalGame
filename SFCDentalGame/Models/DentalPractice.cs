@@ -56,9 +56,11 @@ namespace SFCDentalGame.Models
 
         public void RemoveFromPractice(Behaviour behaviour){
             var practiceItem = _Context.PracticeItems.SingleOrDefault(
-                s => s.Behaviour.BehaviourId == behaviour.BehaviourId && s.DentalPracticeId == DentalPracticeId);
-
+                s => s.Behaviour.BehaviourId == behaviour.BehaviourId 
+                && s.DentalPracticeId == DentalPracticeId);
+            
             _Context.PracticeItems.Remove(practiceItem);
+
             _Context.SaveChanges();
         }
 
@@ -88,9 +90,8 @@ namespace SFCDentalGame.Models
         public decimal GetTotolScore()
         {
             var total = _Context.PracticeItems.Where(c => c.DentalPracticeId == DentalPracticeId)
-                                .Select(c => c.Behaviour.Points ).Sum();
+                                .Select(c => c.Behaviour.Points).Sum();
             return (decimal)total;
         }
-
     }
 }

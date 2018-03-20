@@ -8,6 +8,14 @@ body {
     padding-right: 15px
 }
 
+/*Forms template Kibo definition*/
+.myForms {
+    margin-top: 5%;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #2fa4e7
+}
+
 .carousel-caption p {
     font-size: 20px;
     line-height: 1.4

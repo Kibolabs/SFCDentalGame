@@ -1,0 +1,70 @@
+@model IEnumerable<SFCDentalGame.DAL.Entities.Behaviour>
+
+@{
+    ViewData["Title"] = "All Behaviours";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New Behaviour</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.BehaviourName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BehaviourDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BehaviourType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Points)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsGood)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BehaviourName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BehaviourDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BehaviourType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsGood)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BehaviourId" class="btn btn-primary btn-sm">
+                    <span class="glyphicon glyphicon-edit"></span>
+                </a>
+                <a asp-action="Details" asp-route-id="@item.BehaviourId" class="btn btn-info btn-sm">
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                </a>
+                <a asp-action="Delete" asp-route-id="@item.BehaviourId" class="btn btn-danger btn-sm">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+@{  
+    PaginatedList<Behaviour> PaginatedModel = Model as PaginatedList<Behaviour>;
+    var prevDisabled = !PaginatedModel.HasPreviousPage ? "disabled" : " "; 
+    var nextDisabled = !PaginatedModel.HasNextPage ? "disabled" : "";    }  <a asp-action="Index"    asp-route-sortOrder="@ViewData["CurrentSort"]"    asp-route-page="@(PaginatedModel.PageIndex - 1)"    asp-route-currentFilter="@ViewData["CurrentFilter"]"    class="btn btn-default @prevDisabled">     Previous </a> <a asp-action="Index"    asp-route-sortOrder="@ViewData["CurrentSort"]"    asp-route-page="@(PaginatedModel.PageIndex + 1)"    asp-route-currentFilter="@ViewData["CurrentFilter"]"    class="btn btn-default @nextDisabled">     Next </a> 

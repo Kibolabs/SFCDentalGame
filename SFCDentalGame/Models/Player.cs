@@ -1,22 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+
 namespace SFCDentalGame.Models
 {
     public class Player
     {
-        public Player()
-        {
-        }
         public int PlayerId
-        {
-            get;
-            set;
-        }
-        public string FirstName
-        {
-            get;
-            set;
-        }
-        public string LastName
         {
             get;
             set;
@@ -31,6 +20,5 @@ namespace SFCDentalGame.Models
             get;
             set;
         }
-
     }
 }

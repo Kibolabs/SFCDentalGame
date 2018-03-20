@@ -1,0 +1,52 @@
+@model SFCDentalGame.DAL.Entities.Behaviour
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete Behaviour</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+    <hr />
+<div class="container marginTop">
+    <div class="row">
+        <div class="card">
+            <div class="text-center view overlay hm-white-slight">
+                <img src="@Model.ImageUrl" class="img-fluid" alt="">
+                <a href="#">
+                    <div class="mask waves-effect waves-light"></div>
+                </a>
+            </div>
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">@Model.BehaviourName</h4>
+                <!--Text-->
+                <p class="card-text">@Model.BehaviourDescription.
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Category.CategoryName)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Category.CategoryName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.IsGood)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.IsGood)
+                        </dd>
+                         <dt>
+                            @Html.DisplayNameFor(model => model.Points)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Points)
+                        </dd>
+                </p>
+            <form asp-action="Delete" class="btn btn-group ">
+                <input type="hidden" asp-for="BehaviourId" />
+                <input type="submit" value="Delete" class="btn btn-danger" />
+                <a asp-action="Index" class="btn btn-success" >Back to List</a>
+            </form>
+            </div>
+         </div>
+    </div>
+</div>

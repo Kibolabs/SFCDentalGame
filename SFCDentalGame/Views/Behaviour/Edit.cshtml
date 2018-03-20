@@ -1,0 +1,85 @@
+@model SFCDentalGame.DAL.Entities.Behaviour
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Behaviour</h4>
+<hr />
+<div class="row myForms">
+        <form asp-action="Edit" class="form-horizontal" role="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="BehaviourId" />
+            <div class="form-group">
+                <label asp-for="BehaviourName" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="BehaviourName" class="form-control" />
+                <span asp-validation-for="BehaviourName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviourDescription" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="BehaviourDescription" class="form-control" />
+                <span asp-validation-for="BehaviourDescription" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="BehaviourType" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="BehaviourType" class="form-control" />
+                <span asp-validation-for="BehaviourType" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Points" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="Points" class="form-control" />
+                <span asp-validation-for="Points" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md -2 checkbox" align="right" >
+                    <label class="col-md-5">
+                        <input asp-for="IsGood" align="middle" /> @Html.DisplayNameFor(model => model.IsGood)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="value" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="value" class="form-control" />
+                <span asp-validation-for="value" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="ImageUrl" class="form-control" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="CategoryId" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <label asp-for="FrequencyName" class="col-md-2 control-label"></label>
+                <div class="col-md-5">
+                <input asp-for="FrequencyName" class="form-control" />
+                <span asp-validation-for="FrequencyName" class="text-danger"></span></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

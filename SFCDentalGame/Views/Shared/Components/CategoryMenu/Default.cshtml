@@ -1,11 +1,11 @@
 ﻿
 @foreach (var category in Model)
   {
-   <a class="btn btn-block btn-default btn-lg" asp-controller="Behaviour" asp-action="List" asp-route-category="@category.CategoryName">
+   <a class="btn btn-block btn-info btn-lg" asp-controller="Behaviour" asp-action="List" asp-route-category="@category.CategoryName">
         @category.CategoryName
        </a>
  }
-    <a class="btn btn-block btn-default btn-lg" asp-controller="Behaviour" asp-action="List" asp-route-category="">
+<a class="btn btn-block btn-info btn-lg" asp-controller="Behaviour" asp-action="List" asp-route-category="">
     View all Behaviours
     </a>
 

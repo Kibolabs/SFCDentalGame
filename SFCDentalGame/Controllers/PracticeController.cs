@@ -30,17 +30,17 @@ namespace SFCDentalGame.Controllers
             };
             return View(dPVM);
         }
-        public RedirectToActionResult AddToDentalPractice(int behaviourId){
+        public RedirectToActionResult AddToDentalPractice(int behaviourId, string frequencyName ){
             var selectedBehaviour = _context.Behaviours.FirstOrDefault(p => p.BehaviourId == behaviourId);
             if(selectedBehaviour!=null){
-                _dentalPractice.AddToPractice(selectedBehaviour, 1);
+                _dentalPractice.AddToPractice(selectedBehaviour, 1 );
             }
             return RedirectToAction("Index");
         }
-        public RedirectToActionResult RemoveFromPractice(int behaviourId){
-            var selectedBehaviour = _context.Behaviours.FirstOrDefault(p => p.BehaviourId == behaviourId);
-            if(selectedBehaviour!=null){
-                _dentalPractice.RemoveFromPractice(selectedBehaviour);
+        public RedirectToActionResult RemovePractice(int behaviourId){
+            var selBehaviour = _context.Behaviours.FirstOrDefault(p => p.BehaviourId == behaviourId);
+            if(selBehaviour!=null){
+                _dentalPractice.RemoveFromPractice(selBehaviour);
             }
             return RedirectToAction("Index");
         }

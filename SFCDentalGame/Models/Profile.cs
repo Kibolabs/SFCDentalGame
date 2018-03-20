@@ -12,9 +12,6 @@ namespace SFCDentalGame.Models
     { 
         public int ProfileId { get; set; }
         public int DentalHealthId { get; set; }
-        //public int HealthDetailId { get; set; }
-        public DateTime CreateTime { get; set; }
-
         public DentalHealth DentalHealth { get; set; }
         //public DentalHealthDetail healthDetail { get; set; }
     }

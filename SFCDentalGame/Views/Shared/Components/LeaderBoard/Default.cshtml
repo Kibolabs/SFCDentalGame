@@ -1,5 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+
+    <table class="table table-hover">
+  <thead>
+    <tr bgcolor="#96C02F">
+      <th>Badge</th>
+      <th>First Name</th>
+      <th>Score</th>
+    </tr>
+     </thead>
+    <tbody>
+        @foreach(var topToday in ViewBag.lb)
+        {
+        <tr>
+            <td></td>
+            <td>@topToday.FirstName</td>
+            <td> @topToday.TotalScore</td>
+        </tr>
+        }
+    </tbody>
+    </table>

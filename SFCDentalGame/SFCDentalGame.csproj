@@ -5,14 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
-    <PackageReference Include="bootstrap" Version="3.3.7" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.1" />
+    <PackageReference Include="MailKit" Version="2.0.1" />
+    <PackageReference Include="bootstrap" Version="4.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.2" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-         <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+     <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
 
@@ -28,16 +30,371 @@
     <Folder Include="Views\Practice\">
     </Folder>
     <Folder Include="Components\">
-      <DependentUpon>Components</DependentUpon>
     </Folder>
     <Folder Include="Views\Shared\Components\">
-      <DependentUpon>Components</DependentUpon>
     </Folder>
     <Folder Include="Views\Shared\Components\CategoryMenu\">
-      <DependentUpon>CategoryMenu</DependentUpon>
     </Folder>
     <Folder Include="Views\Shared\Components\PracticeSummary\">
-      <DependentUpon>PracticeSummary</DependentUpon>
     </Folder>
+    <Folder Include="Views\DentalHealth\">
+    </Folder>
+    <Folder Include="Views\Account\">
+    </Folder>
+    <Folder Include="Views\Shared\Components\ChartView\">
+    </Folder>
+    <Folder Include="HtmlHelpers\">
+    </Folder>
+    <Folder Include="Views\Shared\Components\LeaderBoard\">
+    </Folder>
+    <Folder Include="Views\Shared\Components\CustomChart\">
+    </Folder>
+    <Folder Include="Views\Shared\Components\Grouping\">
+      <DependentUpon>Grouping</DependentUpon>
+    </Folder>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="wwwroot\lib\chartjs.js\.DS_Store" />
+    <None Remove="wwwroot\lib\chartjs.js\.editorconfig" />
+    <None Remove="wwwroot\lib\chartjs.js\.eslintignore" />
+    <None Remove="wwwroot\lib\chartjs.js\.eslintrc" />
+    <None Remove="wwwroot\lib\chartjs.js\.npmignore" />
+    <None Remove="wwwroot\lib\chartjs.js\LICENSE.md" />
+    <None Remove="wwwroot\lib\chartjs.js\MAINTAINING.md" />
+    <None Remove="wwwroot\lib\chartjs.js\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\book.json" />
+    <None Remove="wwwroot\lib\chartjs.js\bower.json" />
+    <None Remove="wwwroot\lib\chartjs.js\composer.json" />
+    <None Remove="wwwroot\lib\chartjs.js\gulpfile.js" />
+    <None Remove="wwwroot\lib\chartjs.js\karma.conf.js" />
+    <None Remove="wwwroot\lib\chartjs.js\package.json" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\.DS_Store" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\Chart.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\.DS_Store" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\search_plus_index.json" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\style.css" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\labelling.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\styling.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\cartesian\category.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\cartesian\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\cartesian\linear.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\cartesian\logarithmic.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\cartesian\time.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\radial\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\axes\radial\linear.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\area.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\bar.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\bubble.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\doughnut.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\line.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\mixed.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\polar.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\radar.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\charts\scatter.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\configuration\animations.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\configuration\elements.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\configuration\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\configuration\layout.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\configuration\legend.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\configuration\title.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\configuration\tooltip.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\developers\api.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\developers\axes.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\developers\charts.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\developers\contributing.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\developers\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\developers\plugins.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\developers\updates.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\colors.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\device-pixel-ratio.md" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\fonts.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\options.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\responsive.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\interactions\events.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\interactions\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\general\interactions\modes.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\getting-started\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\getting-started\installation.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\getting-started\integration.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\getting-started\usage.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\style.css" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\theme.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\fonts\fontawesome\FontAwesome.otf" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.eot" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.svg" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.ttf" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\fonts\fontawesome\fontawesome-webfont.woff2" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-anchorjs\anchor-style.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-chartjs\style.css" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-fontsettings\fontsettings.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-fontsettings\website.css" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-ga\plugin.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-highlight\ebook.css" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-highlight\website.css" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-search-plus\jquery.mark.min.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-search-plus\search.css" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-search-plus\search.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-sharing\buttons.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\images\apple-touch-icon-precomposed-152.png" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\images\favicon.ico" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\notes\comparison.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\notes\extensions.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\notes\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\notes\license.html" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\SUMMARY.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\style.css" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\labelling.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\styling.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\cartesian\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\cartesian\category.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\cartesian\linear.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\cartesian\logarithmic.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\cartesian\time.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\radial\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\axes\radial\linear.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\area.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\bar.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\bubble.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\doughnut.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\line.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\mixed.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\polar.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\radar.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\charts\scatter.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\configuration\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\configuration\animations.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\configuration\elements.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\configuration\layout.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\configuration\legend.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\configuration\title.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\configuration\tooltip.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\developers\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\developers\api.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\developers\axes.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\developers\charts.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\developers\contributing.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\developers\plugins.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\developers\updates.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\colors.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\device-pixel-ratio.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\fonts.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\options.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\responsive.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\interactions\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\interactions\events.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\general\interactions\modes.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\getting-started\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\getting-started\installation.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\getting-started\integration.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\getting-started\usage.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\notes\README.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\notes\comparison.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\notes\extensions.md" />
+    <None Remove="wwwroot\lib\chartjs.js\docs\notes\license.md" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\favicon.ico" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\index.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\logo.svg" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\samples.js" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\style.css" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\utils.js" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\advanced\data-labelling.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\advanced\progress-bar.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\bubble.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\combo-bar-line.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\doughnut.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\pie.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\polar-area.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\radar-skip-points.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\radar.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\area\analyser.js" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\area\line-boundaries.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\area\line-datasets.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\area\line-stacked.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\area\radar.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\bar\horizontal.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\bar\multi-axis.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\bar\stacked-group.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\bar\stacked.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\bar\vertical.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\basic.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\interpolation-modes.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\line-styles.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\multi-axis.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\point-sizes.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\point-styles.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\skip-points.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\line\stepped.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\scatter\basic.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\charts\scatter\multi-axis.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\legend\point-style.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\legend\positioning.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\filtering-labels.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\gridlines-display.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\gridlines-style.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\multiline-labels.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\non-numeric-y.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\linear\min-max-suggested.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\linear\min-max.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\linear\step-size.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\logarithmic\line.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\logarithmic\scatter.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\time\combo.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\time\financial.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\time\line-point-data.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scales\time\line.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\scriptable\bubble.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\tooltips\border.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\tooltips\callbacks.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\tooltips\custom-line.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\tooltips\custom-pie.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\tooltips\custom-points.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\tooltips\interactions.html" />
+    <None Remove="wwwroot\lib\chartjs.js\samples\tooltips\positioning.html" />
+    <None Remove="wwwroot\lib\chartjs.js\scripts\deploy.sh" />
+    <None Remove="wwwroot\lib\chartjs.js\scripts\release.sh" />
+    <None Remove="wwwroot\lib\chartjs.js\src\chart.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\charts\Chart.Bar.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\charts\Chart.Bubble.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\charts\Chart.Doughnut.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\charts\Chart.Line.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\charts\Chart.PolarArea.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\charts\Chart.Radar.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\charts\Chart.Scatter.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\controllers\controller.bar.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\controllers\controller.bubble.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\controllers\controller.doughnut.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\controllers\controller.line.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\controllers\controller.polarArea.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\controllers\controller.radar.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\controllers\controller.scatter.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\elements\element.arc.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\elements\element.line.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\elements\element.point.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\elements\element.rectangle.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\elements\index.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\helpers\helpers.canvas.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\helpers\helpers.core.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\helpers\helpers.easing.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\helpers\helpers.options.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\helpers\index.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\platforms\platform.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\plugins\plugin.filler.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\plugins\plugin.legend.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\plugins\plugin.title.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\scales\scale.category.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\scales\scale.linear.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\scales\scale.linearbase.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\scales\scale.logarithmic.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\scales\scale.radialLinear.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\scales\scale.time.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\.eslintrc" />
+    <None Remove="wwwroot\lib\chartjs.js\test\jasmine.context.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\jasmine.index.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\jasmine.matchers.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\jasmine.utils.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\core.scale\label-offset-vertical-axes.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\core.scale\label-offset-vertical-axes.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-end-span.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-end-span.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-end.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-end.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-span.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-span.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline-span.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-spline.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped-span.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin-stepped.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-origin.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-start-span.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-start-span.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-start.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-boundary-start.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset-span.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset-span.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset-spline-span.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset-spline-span.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset-spline.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset-spline.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-line-dataset.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-radar-boundary-origin-spline.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-radar-boundary-origin.json" />
+    <None Remove="wwwroot\lib\chartjs.js\test\fixtures\plugin.filler\fill-radar-boundary-origin.png" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\controller.bar.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\controller.bubble.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\controller.doughnut.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\controller.line.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\controller.polarArea.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\controller.radar.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.controller.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.datasetController.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.element.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.helpers.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.interaction.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.layoutService.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.plugin.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.scale.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.scaleService.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\core.tooltip.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\element.arc.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\element.line.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\element.point.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\element.rectangle.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\global.defaults.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\global.deprecations.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\helpers.canvas.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\helpers.core.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\helpers.easing.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\helpers.options.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\platform.dom.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\plugin.filler.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\plugin.legend.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\plugin.title.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\scale.category.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\scale.linear.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\scale.logarithmic.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\scale.radialLinear.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\test\specs\scale.time.tests.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\platforms\platform.dom.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\platforms\platform.basic.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.tooltip.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.ticks.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.scaleService.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.scale.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.plugin.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.layoutService.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.interaction.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.helpers.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.element.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.defaults.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.datasetController.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.controller.js" />
+    <None Remove="wwwroot\lib\chartjs.js\src\core\core.animation.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-chartjs\chartjs-plugin-deferred.min.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.min.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.min.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\docs\gitbook\gitbook-plugin-chartjs\Chart.bundle.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\Chart.min.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\Chart.bundle.min.js" />
+    <None Remove="wwwroot\lib\chartjs.js\dist\Chart.bundle.js" />
   </ItemGroup>
 </Project>

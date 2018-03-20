@@ -12,7 +12,7 @@ namespace SFCDentalGame.Components
             _context = context;
         }
         public IViewComponentResult Invoke(){
-            var categories = _context.Categories.OrderBy(c => c.CategoryName);
+            var categories = _context.Categories.OrderBy(c => c.CategoryId);
             return View(categories);
         }
     }

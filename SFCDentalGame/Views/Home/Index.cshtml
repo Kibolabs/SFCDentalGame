@@ -13,9 +13,9 @@
             <img src="~/images/SylvanHOME.jpg" alt="ASP.NET" class="img-responsive" />
             <div class="carousel-caption" role="option">
                 <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
+                    Experience how practices affect teeth age and dental health
+                    <a class="btn btn-warning btn-lg" asp-controller="Behaviour" asp-action="List">
+                        Get Started
                     </a>
                 </p>
             </div>
@@ -24,9 +24,9 @@
             <img src="~/images/SYLVAN2.jpg" alt="Visual Studio" class="img-responsive" />
             <div class="carousel-caption" role="option">
                 <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
+                   Experience how practices affect teeth age and dental health
+                    <a class="btn btn-warning btn-lg" asp-controller="Behaviour" asp-action="List">
+                        Get Started
                     </a>
                 </p>
             </div>
@@ -35,9 +35,9 @@
             <img src="~/images/SYLVAN3.jpg" alt="Package Management" class="img-responsive" />
             <div class="carousel-caption" role="option">
                 <p>
-                    Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
+                    Experience how practices affect teeth age and dental health
+                    <a class="btn  btn-lg btn-warning" asp-controller="Behaviour" asp-action="List">
+                        Get Started
                     </a>
                 </p>
             </div>
@@ -51,4 +51,18 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+</div>
+<div class="row">
+    <div class="col-md-4" >
+        <h2 class="text-info">All-time Top Players</h2>
+        @await Component.InvokeAsync("LeaderBoard")
+    </div>
+    <div class="col-md-4 ">
+        <h2 class="text-info">Statistics</h2>
+        @await Component.InvokeAsync("ChartView")
+    </div>
+    <div class="col-md-4 " >
+        <h2 class="text-info">Animated Video</h2>
+      @await Component.InvokeAsync("Grouping")
+    </div>
 </div>

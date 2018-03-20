@@ -10,6 +10,7 @@ using SFCDentalGame.DAL.Repositories;
 using Microsoft.AspNetCore.Http;
 using SFCDentalGame.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 
 namespace SFCDentalGame
 {
@@ -28,6 +29,8 @@ namespace SFCDentalGame
             
             services.AddDbContext<SFCContext>(options =>
             options.UseSqlite("Data Source=SylvanDentalGameDb.db"));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<SFCContext>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped(sp=>DentalPractice.GetPractice(sp));
@@ -51,10 +54,18 @@ namespace SFCDentalGame
             }
 
             app.UseStaticFiles();
+            app.UseDeveloperExceptionPage();
+            app.UseStatusCodePages();
             app.UseSession();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                    name: "Admini",
+                    template: "controller=Behaviour/{action}/{id?}",
+                    defaults: new {Controller="Behaviour", action="Index"});
+        
                 routes.MapRoute(name:"Category Filter", template:"Behaviour/{action}/{category}",
                                 defaults: new {Controller="Behaviour", action="List"});
                 routes.MapRoute(

@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+        <style>
+            #chart_Container{
+                width:400px;
+                height:400px;
+                boarder: 1px solid #06bf2f;
+            padding: 1px;
+            boarder-radius:4px;
+            }
+        </style>
+  
+     <div id="chart_Container">
+        <canvas id="bar_chart"> 
+        </canvas>
+    </div>
+
+<script>
+    var behavArray=@Html.Raw(Json.Serialize(ViewBag.Occur));
+    var catArray=@Html.Raw(Json.Serialize(ViewBag.Category));
+        var ctx =document.getElementById("bar_chart").getContext('2d');
+        var barchart = new Chart(ctx, {
+         type:'bar',
+            data:{
+                labels:catArray,
+                datasets:[{
+                    label:"Practices Distribution",
+                    data:behavArray,
+                    backgroundColor:['rgba(242,166,54,0.5)', 'rgba(145,65,72,0.5)', 'rgba(74,25,92,0.5)'],
+                    borderColor:['rgba(242,166,54)', 'rgba(145,65,72)', 'rgba(74,25,92)'],
+                    borderWidth:1
+                }]
+            },
+
+        options:{
+                mantainAspectRatio:false,
+                scale:{ 
+            xAxes:[{
+            ticks:
+            {
+            beginAtZero:true
+            }
+            }]
+            }
+        }
+        });
+</script>

@@ -1,0 +1,95 @@
+@model IEnumerable<SFCDentalGame.DAL.Entities.FreqBehaviour>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.UsageBehaviour)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OtherSupporting)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LongerPractices)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BehaviourName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BehaviourDescription)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BehaviourType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Points)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ratings)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProffesionalComment)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ImageUrl)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsageBehaviour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OtherSupporting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LongerPractices)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BehaviourName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BehaviourDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BehaviourType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Points)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ratings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProffesionalComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.CategoryId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BehaviourId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BehaviourId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BehaviourId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -9,6 +9,13 @@
     padding-left: 15px;
     padding-right: 15px
 }
+/*Forms template Kibo definition*/
+.myForms {
+    margin-top: 5%;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #2fa4e7
+}
 
 /* Carousel */
 .carousel-caption p {

@@ -1,0 +1,56 @@
+@model SFCDentalGame.DAL.Entities.Behaviour
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Behaviour Details</h2>
+    <hr />
+<div class="container marginTop">
+    <div class="row">
+        <div class="card">
+            <div class="text-center view overlay hm-white-slight">
+                <img src="@Model.ImageUrl" class="img-fluid" alt="">
+                <a href="#">
+                    <div class="mask waves-effect waves-light"></div>
+                </a>
+            </div>
+            <div class="card-block">
+                <!--Title-->
+                <h4 class="card-title">@Model.BehaviourName</h4>
+                <!--Text-->
+                <p class="card-text">@Model.BehaviourDescription.
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Category.CategoryName)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Category.CategoryName)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.IsGood)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.IsGood)
+                        </dd>
+                         <dt>
+                            @Html.DisplayNameFor(model => model.Points)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Points)
+                        </dd>
+                </p>
+                <p class="btn btn-group pull-right">
+                    <a asp-action="Edit" asp-route-id="@Model.BehaviourId" class="btn btn-primary">Edit</a>
+                    <a asp-action="Index" class="btn btn-success">Back to List</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
